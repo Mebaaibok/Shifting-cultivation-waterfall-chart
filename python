@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+import waterfall_chart
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+import plotly
+
+
+fig = go.Figure(go.Waterfall(name ="Gain and loss of Jhum Area", 
+                             orientation = "v",
+                             measure = ["relative", "relative","relative","relative","relative","relative","relative","total",
+                                        "relative", "relative","relative","relative","relative","relative","relative","total"],
+                             x = [['2003','2003','2003','2003','2003','2003','2003','2003',
+                                   '2005-06','2005-06','2005-06','2005-06','2005-06','2005-06','2005-06','2005-06'],
+                                   ['Arunachal Pradesh','Assam',
+                              'Manipur','Meghalaya','Mizoram','Nagaland','Tripura','2003 Subtotal',
+    'Arunachal Pradesh','Assam',
+                              'Manipur','Meghalaya','Mizoram','Nagaland','Tripura','2005-06 Subtotal']],
+                             y = [1613.13,871.78,4816.68,743.83,4017.41,1917.9,395.26,0,
+                                  -81.67,-551.48,-3964.48,-294.84,-1399.85,909.84,-141.15,0]
+        ))
+
+#Update the layout
+fig.update_layout(title = 'Jhum area change from 2003 - 2016')
+
+#Export the waterfall to html
+plotly.offline. plot(fig, filename='Waterfall.html')
+
+fig.show()
