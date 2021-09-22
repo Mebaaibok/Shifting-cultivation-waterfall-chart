@@ -17,11 +17,17 @@ fig = go.Figure(go.Waterfall(name ="Gain and loss of Jhum Area",
     'Arunachal Pradesh','Assam',
                               'Manipur','Meghalaya','Mizoram','Nagaland','Tripura','2005-06 Subtotal']],
                              y = [1613.13,871.78,4816.68,743.83,4017.41,1917.9,395.26,0,
-                                  -81.67,-551.48,-3964.48,-294.84,-1399.85,909.84,-141.15,0]
+                                  -81.67,-551.48,-3964.48,-294.84,-1399.85,909.84,-141.15,0],
+        legendrank = 1000, showlegend = True, legendgroup = "",
         ))
 
+
+
 #Update the layout
-fig.update_layout(title = 'Jhum area change from 2003 - 2016')
+fig.update_layout(title = 'Jhum area change from 2003 - 2016' ,  yaxis_title="млрд руб.",)
+fig.update_xaxes(tickangle=90, tickfont=dict(family='Open Sans, light', color='black', size=14))
+fig.update_yaxes(tickangle=0, tickfont=dict(family='Open Sans, light', color='black', size=14,))
+
 
 #Export the waterfall to html
 plotly.offline. plot(fig, filename='Waterfall.html')
